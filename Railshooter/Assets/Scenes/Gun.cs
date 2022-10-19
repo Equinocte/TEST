@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Gun : MonoBehaviour
@@ -9,6 +8,8 @@ public class Gun : MonoBehaviour
     public Texture2D curseur;
 
     public Camera fpscam;
+    public ParticleSystem Flash;
+
 
     private void Start()
     {
@@ -25,9 +26,11 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
+        Flash.Play();
         RaycastHit hit;
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
         {
+            Debug.Log(hit.transform.name);
         }
     }
 }
