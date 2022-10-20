@@ -9,6 +9,9 @@ public class Gun : MonoBehaviour
 
     public Camera fpscam;
     public ParticleSystem Flash;
+    public GameObject impactEffect;
+
+    public GameObject gun;
 
 
     private void Start()
@@ -17,6 +20,12 @@ public class Gun : MonoBehaviour
     }
     void Update()
     {
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 100f;
+        mousePos = fpscam.ScreenToWorldPoint(mousePos);
+        Debug.DrawRay(transform.position, mousePos - transform.position,
+        Color.blue);
+
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
@@ -28,9 +37,13 @@ public class Gun : MonoBehaviour
     {
         Flash.Play();
         RaycastHit hit;
-        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
+        Ray ray = fpscam.ScreenPointToRay(Input.mousePosition);
+
+        ///Debug.DrawRay(transform.position, transform.forward * 100, Color.red);
+        if (Physics.Raycast(ray, out hit, 100))
         {
-            Debug.Log(hit.transform.name);
+            Debug.Log("PLS JE VEUX QUE CA MARCHE !!");
+            Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         }
     }
 }
