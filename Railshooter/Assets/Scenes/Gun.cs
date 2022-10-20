@@ -16,6 +16,7 @@ public class Gun : MonoBehaviour
     public float plasmabullet = 12f;
     public GameObject grenadePrefab;
     public GameObject PlasmaBall;
+    public GameObject cible;
 
 
     private void Start()
@@ -24,11 +25,11 @@ public class Gun : MonoBehaviour
     }
     void Update()
     {
-        Ray ray = fpscam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit raycastHit))
-        {
-            transform.position = raycastHit.point;
-        }
+        ///Ray ray = fpscam.ScreenPointToRay(Input.mousePosition);
+        ///if (Physics.Raycast(ray, out RaycastHit raycastHit))
+        ///{
+        ///    transform.position = raycastHit.point;
+        ///}
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 100f;
         mousePos = fpscam.ScreenToWorldPoint(mousePos);
