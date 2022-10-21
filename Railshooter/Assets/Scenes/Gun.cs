@@ -12,8 +12,8 @@ public class Gun : MonoBehaviour
     public GameObject impactEffect;
 
     public GameObject gun;
-    public float throwForce = 20f;
-    public float plasmabullet = 12f;
+    public float throwForce = 4f;
+    public float plasmabullet = 4f;
     public GameObject grenadePrefab;
     public GameObject PlasmaBall;
     public GameObject cible;
@@ -70,16 +70,22 @@ public class Gun : MonoBehaviour
     {
         ///RaycastHit hit;
         ///Ray ray = fpscam.ScreenPointToRay(Input.mousePosition);
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 100f;
+        mousePos = fpscam.ScreenToWorldPoint(mousePos);
         GameObject grenade = Instantiate(grenadePrefab, transform.position, transform.rotation);
         Rigidbody rb = grenade.GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * throwForce, ForceMode.VelocityChange);
+        rb.AddForce(mousePos / 6, ForceMode.VelocityChange);
 
     }
 
     void Plasma()
     {
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 100f;
+        mousePos = fpscam.ScreenToWorldPoint(mousePos);
         GameObject PlasmaBal = Instantiate(PlasmaBall, transform.position, transform.rotation);
         Rigidbody rb = PlasmaBal.GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * plasmabullet, ForceMode.VelocityChange);
+        rb.AddForce(mousePos / plasmabullet, ForceMode.VelocityChange);
     }
 }
