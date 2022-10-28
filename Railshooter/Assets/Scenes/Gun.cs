@@ -17,12 +17,13 @@ public class Gun : MonoBehaviour
     public GameObject grenadePrefab;
     public GameObject PlasmaBall;
     public GameObject cible;
-
+    public Animator mAnimator;
 
     private void Start()
     {
         Cursor.SetCursor(curseur, Vector2.zero, CursorMode.Auto);
     }
+
     void Update()
     {
         ///Ray ray = fpscam.ScreenPointToRay(Input.mousePosition);
@@ -35,6 +36,8 @@ public class Gun : MonoBehaviour
         mousePos = fpscam.ScreenToWorldPoint(mousePos);
         Debug.DrawRay(transform.position, mousePos - transform.position,
         Color.blue);
+        mAnimator = gun.GetComponent<Animator>();
+        mAnimator.SetBool("tir", false);
 
         if (Input.GetButtonDown("Fire1"))
         {
@@ -50,6 +53,8 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
+        mAnimator = gun.GetComponent<Animator>();
+        mAnimator.SetBool("tir", true);
         Flash.Play();
         RaycastHit hit;
         Ray ray = fpscam.ScreenPointToRay(Input.mousePosition);
@@ -59,6 +64,8 @@ public class Gun : MonoBehaviour
         {
             Debug.Log("PLS JE VEUX QUE CA MARCHE !!");
             Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+
+            
 
             Kill target = hit.transform.GetComponent<Kill>();
             if (target != null)

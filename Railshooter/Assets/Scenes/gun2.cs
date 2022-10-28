@@ -8,7 +8,8 @@ public class gun2 : MonoBehaviour
     public Camera fpscam;
     public GameObject PlasmaBall;
     public GameObject grenadePrefab;
-
+    public Animator mAnimator;
+    public GameObject gun;
 
     // Start is called before the first frame update
     private void Start()
@@ -19,6 +20,8 @@ public class gun2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        mAnimator = gun.GetComponent<Animator>();
+        mAnimator.SetBool("tirr", false);
         if (Input.GetKeyDown("c"))
         {
             Plasma();
@@ -32,6 +35,8 @@ public class gun2 : MonoBehaviour
 
     void Plasma()
     {
+        mAnimator = gun.GetComponent<Animator>();
+        mAnimator.SetBool("tirr", true);
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 100f;
         mousePos = fpscam.ScreenToWorldPoint(mousePos);
