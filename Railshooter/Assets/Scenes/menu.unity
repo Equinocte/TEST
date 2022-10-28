@@ -194,8 +194,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -157, y: -92}
-  m_SizeDelta: {x: 213, y: 145}
+  m_AnchoredPosition: {x: -88.702415, y: -46.45677}
+  m_SizeDelta: {x: 369.4967, y: 249.6053}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &250650455
 GameObject:
@@ -300,8 +300,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 46.6, y: 2.8}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 72.2487, y: -22.6231}
+  m_SizeDelta: {x: 374.7435, y: 223.2069}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &255421972
 MonoBehaviour:
@@ -323,8 +323,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Arme 1 : clique gauche pour tirer\nArme 2 : clique droit pour tirer\nGrenade
-    : Maj\n\nTirer sur les araign\xE9es et robots !\nFaites le meilleur score !\n\n"
+  m_text: "Arme : clique gauche pour tirer\nChangement d'armes : molette\nGrenade
+    : g\n\nTirer sur les araign\xE9es et robots !\nFaites le meilleur score !\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -351,8 +351,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -437,8 +437,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -201.69, y: -152.7}
-  m_SizeDelta: {x: 224.2749, y: 43.913}
+  m_AnchoredPosition: {x: -166.22745, y: -150.9467}
+  m_SizeDelta: {x: 389.0557, y: 75.5925}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &351129814
 MonoBehaviour:
@@ -570,8 +570,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -201.6858, y: -69.214516}
-  m_SizeDelta: {x: 93.3116, y: 33.7016}
+  m_AnchoredPosition: {x: -166.22012, y: -7.2335}
+  m_SizeDelta: {x: 161.87, y: 58.0144}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &526028919
 MonoBehaviour:
@@ -872,7 +872,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813079360}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 832, y: 463, z: -1107}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -914,8 +914,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -121, y: 91}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -26.2524, y: 268.5622}
+  m_SizeDelta: {x: 173.4727, y: 172.1415}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1434897204
 MonoBehaviour:
@@ -1199,8 +1199,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -106.5567, y: -61.15457}
-  m_SizeDelta: {x: 563.801, y: 318.825}
+  m_AnchoredPosition: {x: -1.1973, y: 6.6410027}
+  m_SizeDelta: {x: 978.0406, y: 548.8301}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2067384295
 MonoBehaviour:
