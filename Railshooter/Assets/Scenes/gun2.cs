@@ -22,7 +22,7 @@ public class gun2 : MonoBehaviour
     {
         mAnimator = gun.GetComponent<Animator>();
         mAnimator.SetBool("tirr", false);
-        if (Input.GetKeyDown("c"))
+        if (Input.GetButtonDown("Fire1"))
         {
             Plasma();
         }
