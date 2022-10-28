@@ -12,7 +12,7 @@ public class Gun : MonoBehaviour
     public GameObject impactEffect;
 
     public GameObject gun;
-    public float throwForce = 4f;
+    public float throwForce = 40f;
     public float plasmabullet = 4f;
     public GameObject grenadePrefab;
     public GameObject PlasmaBall;
@@ -46,10 +46,6 @@ public class Gun : MonoBehaviour
             ThrowGrenade();
         }
 
-        if (Input.GetKeyDown("c"))
-        {
-            Plasma();
-        }
     }
 
     void Shoot()
@@ -59,10 +55,16 @@ public class Gun : MonoBehaviour
         Ray ray = fpscam.ScreenPointToRay(Input.mousePosition);
 
         ///Debug.DrawRay(transform.position, transform.forward * 100, Color.red);
-        if (Physics.Raycast(ray, out hit, 100))
+        if (Physics.Raycast(ray, out hit, 300))
         {
             Debug.Log("PLS JE VEUX QUE CA MARCHE !!");
             Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+
+            Kill target = hit.transform.GetComponent<Kill>();
+            if (target != null)
+            {
+                target.Die();
+            }
         }
     }
 
@@ -75,17 +77,9 @@ public class Gun : MonoBehaviour
         mousePos = fpscam.ScreenToWorldPoint(mousePos);
         GameObject grenade = Instantiate(grenadePrefab, transform.position, transform.rotation);
         Rigidbody rb = grenade.GetComponent<Rigidbody>();
-        rb.AddForce(mousePos / 6, ForceMode.VelocityChange);
+        rb.AddForce((mousePos - transform.position) / 3, ForceMode.VelocityChange);
 
     }
 
-    void Plasma()
-    {
-        Vector3 mousePos = Input.mousePosition;
-        mousePos.z = 100f;
-        mousePos = fpscam.ScreenToWorldPoint(mousePos);
-        GameObject PlasmaBal = Instantiate(PlasmaBall, transform.position, transform.rotation);
-        Rigidbody rb = PlasmaBal.GetComponent<Rigidbody>();
-        rb.AddForce(mousePos / plasmabullet, ForceMode.VelocityChange);
-    }
+
 }
