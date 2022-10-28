@@ -17761,7 +17761,7 @@ MonoBehaviour:
   curseur: {fileID: 0}
   fpscam: {fileID: 963194227}
   Flash: {fileID: 1832789121}
-  impactEffect: {fileID: 1625590031068301035, guid: 0287e491d11e7714bbf4ec99cda380b0, type: 3}
+  impactEffect: {fileID: 1239717334}
   gun: {fileID: 575263010}
   throwForce: 40
   plasmabullet: 4
