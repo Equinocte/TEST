@@ -8,6 +8,8 @@ public class NoteObject : MonoBehaviour
 
     public KeyCode keyToPress;
 
+    private bool obtained = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,11 @@ public class NoteObject : MonoBehaviour
         {
             if(canBePressed)
             {
+                GameManager.instance.NoteHit();
+                obtained = true;
                 gameObject.SetActive(false);
+
+
             }
         }
     }
@@ -38,6 +44,11 @@ public class NoteObject : MonoBehaviour
         if (other.tag == "Activator")
         {
             canBePressed = false;
+            if (!obtained)
+            {
+                GameManager.instance.NoteMissed();
+            }
+
         }
     }
 }

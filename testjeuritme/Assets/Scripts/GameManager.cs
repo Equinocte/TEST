@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,10 +11,21 @@ public class GameManager : MonoBehaviour
     public bool startPlaying;
 
     public BeatScroller theBS;
+
+    public static GameManager instance;
+
+    public int currentScore;
+    public int scorePerNote = 100;
+
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI multiText;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
+
+        scoreText.text = "Score : 0";
     }
 
     // Update is called once per frame
@@ -28,5 +41,18 @@ public class GameManager : MonoBehaviour
                 theMusic.Play();
             }
         }
+    }
+
+    public void NoteHit()
+    {
+        Debug.Log("Hit On Time");
+
+        currentScore += scorePerNote;
+        scoreText.text = "Score : " + currentScore;
+    }
+
+    public void NoteMissed()
+    {
+        Debug.Log("Missed Note");
     }
 }
