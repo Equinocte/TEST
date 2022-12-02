@@ -308,6 +308,9 @@ MonoBehaviour:
   theBS: {fileID: 1279207911}
   currentScore: 0
   scorePerNote: 100
+  currentMultiplier: 0
+  multiplierTracker: 0
+  multiplierThresholds: 080000001000000020000000
   scoreText: {fileID: 827427725}
   multiText: {fileID: 1942929362}
 --- !u!4 &210796318
