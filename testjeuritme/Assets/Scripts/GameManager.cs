@@ -82,6 +82,8 @@ public class GameManager : MonoBehaviour
                 float percentHit = (totalHit / totalNotes) * 100f;
 
                 percentHitText.text = percentHit.ToString("F1") + "%";
+
+                finalScoreText.text = currentScore.ToString();
             }
             else
             {
