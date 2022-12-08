@@ -96,7 +96,6 @@ public class GameManager : MonoBehaviour
 
     public void NoteHit()
     {
-        Debug.Log("Hit On Time");
 
         multiplierTracker++;
 
