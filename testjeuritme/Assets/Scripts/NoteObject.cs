@@ -10,6 +10,8 @@ public class NoteObject : MonoBehaviour
 
     private bool obtained = false;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +29,12 @@ public class NoteObject : MonoBehaviour
                 obtained = true;
                 gameObject.SetActive(false);
 
-                if (Mathf.Abs(transform.position.y) > 1.6)
+                if (Mathf.Abs(transform.position.y) > 1.5)
                 {
                     Debug.Log("hit");
                     GameManager.instance.NormalHit();
                 }
-                else if (Mathf.Abs(transform.position.y) > 0.4)
+                else if (Mathf.Abs(transform.position.y) > 0.5)
                 {
                     Debug.Log("good");
                     GameManager.instance.GoodHit();
@@ -46,6 +48,7 @@ public class NoteObject : MonoBehaviour
 
             }
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)

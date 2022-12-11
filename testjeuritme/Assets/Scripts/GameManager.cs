@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
 
     public void GoodHit()
     {
-        currentScore += scorePerNote * currentMultiplier;
+        currentScore += scorePerGoodNote * currentMultiplier;
         NoteHit();
 
         goodHits++;
@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
 
     public void PerfectHit()
     {
-        currentScore += scorePerNote * currentMultiplier;
+        currentScore += scorePerPerfectNote * currentMultiplier;
         NoteHit();
         perfectHits++;
     }
