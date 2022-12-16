@@ -10,6 +10,8 @@ public class NoteObject : MonoBehaviour
 
     private bool obtained = false;
 
+    public GameObject okEffect, goodEffect, perfectEffect, badEffect;
+
 
 
     // Start is called before the first frame update
@@ -33,16 +35,19 @@ public class NoteObject : MonoBehaviour
                 {
                     Debug.Log("hit");
                     GameManager.instance.NormalHit();
+                    Instantiate(okEffect, transform.position, okEffect.transform.rotation);
                 }
                 else if (Mathf.Abs(transform.position.y) > 0.5)
                 {
                     Debug.Log("good");
                     GameManager.instance.GoodHit();
+                    Instantiate(goodEffect, transform.position, goodEffect.transform.rotation);
                 }
                 else
                 {
                     Debug.Log("perfect");
                     GameManager.instance.PerfectHit();
+                    Instantiate(perfectEffect, transform.position, perfectEffect.transform.rotation);
                 }
 
 
@@ -66,6 +71,7 @@ public class NoteObject : MonoBehaviour
             if (!obtained)
             {
                 GameManager.instance.NoteMissed();
+                Instantiate(badEffect, transform.position, badEffect.transform.rotation);
             }
 
         }

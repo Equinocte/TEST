@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public int scorePerGoodNote = 125;
     public int scorePerPerfectNote = 150;
 
+
     public int currentMultiplier;
     public int multiplierTracker;
     public int[] multiplierThresholds;
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
     public KeyCode keyToPress;
 
     public GameObject resultsScreen;
+    public GameObject start;
     public Text percentHitText, normalsText, goodsText, perfectsText, missesText, rankText, finalScoreText;
 
     // Start is called before the first frame update
@@ -57,6 +59,7 @@ public class GameManager : MonoBehaviour
             {
                 startPlaying = true;
                 theBS.hasStarted = true;
+                start.SetActive(false);
 
 
                 theMusic.Play();
@@ -84,6 +87,34 @@ public class GameManager : MonoBehaviour
                 percentHitText.text = percentHit.ToString("F1") + "%";
 
                 finalScoreText.text = currentScore.ToString();
+
+                string rankVal = "F";
+
+                if (currentScore > 50000)
+                {
+                    rankVal = "E";
+                    if (currentScore > 60000)
+                    {
+                        rankVal = "D";
+                        if (currentScore > 70000)
+                        {
+                            rankVal = "C";
+                            if (currentScore > 80000)
+                            {
+                                rankVal = "B";
+                                if (currentScore > 90000)
+                                {
+                                    rankVal = "A";
+                                    if (currentScore > 100000)
+                                    {
+                                        rankVal = "S";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                rankText.text = rankVal;
             }
             else
             {

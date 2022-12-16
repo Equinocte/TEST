@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2740067624479274652}
   - component: {fileID: 2740067624479274653}
   - component: {fileID: 7204903948478380647}
+  - component: {fileID: 1971136298795477463}
   m_Layer: 0
   m_Name: Isometric Diamond
   m_TagString: Untagged
@@ -98,3 +99,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatTempo: 147
+--- !u!114 &1971136298795477463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2740067624479274654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac0ac1f408f992428c954f015001988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBePressed: 0
+  keyToPress: 0
